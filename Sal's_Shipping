@@ -1,0 +1,82 @@
+#Python
+#Change weight to any number
+
+weight = 41.5
+if weight <= 0:
+  print("Please select a larger weight!")
+
+#Ground Shipping
+if weight <= 2:
+  normal_ground_shipping_cost = 20 + (1.50 * weight)
+  #print(normal_ground_shipping_cost)
+elif weight <= 6:
+  normal_ground_shipping_cost = 20 + (3.00 * weight)
+  #print(normal_ground_shipping_cost)
+elif weight <= 10:
+  normal_ground_shipping_cost = 20 + (4.00 * weight)
+  #print(normal_ground_shipping_cost)
+else:
+  normal_ground_shipping_cost = 20 + (4.75 * weight)
+  #print(normal_ground_shipping_cost)
+
+#Ground Shipping Premium
+premium_ground_shipping_cost = 125.00
+
+#Drone Shipping
+if weight <= 2:
+  drone_shipping_cost = (4.50 * weight)
+  #print(drone_shipping_cost)
+elif weight <= 6:
+  drone_shipping_cost = (9.00 * weight)
+  #print(drone_shipping_cost)
+elif weight <= 10:
+  drone_shipping_cost = (12.00 * weight)
+  #print(drone_shipping_cost)
+else:
+  drone_shipping_cost = (14.25 * weight)
+ #print(drone_shipping_cost)
+
+if premium_ground_shipping_cost <= normal_ground_shipping_cost and premium_ground_shipping_cost <= drone_shipping_cost:
+  shipping_Premium_Ground = True
+else:
+  shipping_Premium_Ground = False
+
+if normal_ground_shipping_cost <= premium_ground_shipping_cost and normal_ground_shipping_cost <= drone_shipping_cost:
+  shipping_Normal_Ground = True
+else:
+  shipping_Normal_Ground = False
+
+if drone_shipping_cost <= normal_ground_shipping_cost and drone_shipping_cost <= premium_ground_shipping_cost:
+  shipping_Drone = True
+else:
+  shipping_Drone = False
+
+premium_ground_shipping_cost = str(premium_ground_shipping_cost)
+normal_ground_shipping_cost = str(normal_ground_shipping_cost)
+drone_shipping_cost = str(drone_shipping_cost)
+
+if shipping_Premium_Ground == True:
+  shipping_Premium_Ground = "You chose premium ground shipping!"
+  print(shipping_Premium_Ground)
+  print("The shipping cost is $" + premium_ground_shipping_cost + ".")
+elif shipping_Normal_Ground == True:
+  shipping_Normal_Ground = "You chose normal ground shipping!"
+  print(shipping_Normal_Ground)
+  print("The shipping cost is $" + normal_ground_shipping_cost + ".")
+elif shipping_Drone == True:
+  shipping_Drone = "You chose drone shipping!"
+  print(shipping_Drone)
+  print("This is the cheapest shipping option at $" + drone_shipping_cost + ".")
+else:
+  print("There was an error processing your request. Try again.")
+  
+print("Ground Shipping: " + normal_ground_shipping_cost)
+print("Premium Ground Shipping: " + premium_ground_shipping_cost)
+print("Drone Shipping: " + drone_shipping_cost)
+
+
+
+
+
+
+
