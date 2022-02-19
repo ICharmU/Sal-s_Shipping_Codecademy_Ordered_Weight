@@ -1,9 +1,8 @@
-#Python
 #Change weight to any number
-
-weight = 41.5
+weight = 0
 if weight <= 0:
   print("Please select a larger weight!")
+  exit()
 
 #Ground Shipping
 if weight <= 2:
@@ -73,10 +72,3 @@ else:
 print("Ground Shipping: " + normal_ground_shipping_cost)
 print("Premium Ground Shipping: " + premium_ground_shipping_cost)
 print("Drone Shipping: " + drone_shipping_cost)
-
-
-
-
-
-
-
